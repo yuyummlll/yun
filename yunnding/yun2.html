@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     img {
+            display: block;
+        }
+        .header {
+            height: 480px;
+            width: 100%;
+            background: url("images/background.jpg") no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .nav {
+            width: 880px;
+            margin: 0 auto;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .nav-item {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .welcome {
+            margin-top: 20px;
+            height: 240px;
+            background: #eae7e8;
+            position: relative;
+        }
+
+        .welcome-content {
+            position: absolute;
+            width: 880px;
+            top: 20px;
+            left: 50%;
+             transform: translateX(-50%);
+            display: flex;
+            background: white;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-content-left {
+            width: 30%;
+            position: relative;
+        }
+
+        .play {
+            width: 100%;
+            position: absolute;
+            bottom: -10%;
+            left: 25%;
+            
+        }
+
+        .welcome-content-left-img {
+            width: 100%;
+        }
+
+        .welcome-content-right {
+            width: 70%;
+            padding: 40px 80px 0;
+        }
+
+        .lamy-product {
+            width: 880px;
+            margin: 180px auto 0;
+        }
+
+        .lamy-product-title {
+            color: black;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .lamy-product-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+
+        }
+
+        .lamy-product-content-item {
+            width: 30%;
+            text-align: center;
+        }
+
+        .lamy-product-content-item-title {
+            margin-bottom: 20px;
+        }
+
+        .lamy-product-content-item-text {
+            font-size: 14px;
+        }
+
+        .lamy-product-btn {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            color: white;
+            width: 160px;
+            height: 40px;
+        }
+
+        .lamy-product-btn-arrow {
+            width: 14px;
+            height: 14px;
+            margin-left: 10px;
+        }
+
+        .product-imgBox {
+            background: #dad8d9;
+            margin-top: 20px;
+        }
+
+        .product-img {
+            width: 880px;
+            margin: 0 auto;
+        }
+
+        .saying {
+            height: 280px;
+            background: url("images/sayingBg.jpg") no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+
+        .saying-content {
+            width: 620px;
+            background: white;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            padding: 40px 90px 20px;
+            font-size: 14px;
+            transform: translateX(-50%);
+        }
+
+        .saying-content-img {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 20px;
+        }
+
+        .tab {
+            width: 140px;
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab-item {
+            width: 30%;
+            height: 10px;
+            background: #e6e4e4;
+        }
+
+        .tab-item.active {
+            background: #807a7a;
+        }
+
+        .our-product {
+            width: 100%;
+        }
+
+        .our-product-content {
+            width: 700px;
+            margin: 0 auto;
+            padding: 120px 0 0;
+        }
+
+        .our-product-headerImg {
+            margin: 0 auto;
+        }
+
+        .our-product-content-img {
+            width: 100%;
+        }
+
+        .our-product-content-btn {
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4a3e42;
+            color: white;
+            width: 160px;
+            height: 40px;
+        }
+
+        .our-product-content-btn-arrow {
+            width: 14px;
+            height: 14px;
+            margin-left: 10px;
+        }
+
+        .copywriting {
+            width: 100%;
+            background: #57444f;
+            height: 280px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .copywriting-img {
+            width: 620px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .copywriting-btn {
+            margin: 200px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8024d;
+            color: white;
+            width: 160px;
+            height: 40px;
+        }
+
+        .copywriting-btn-arrow {
+            width: 14px;
+            height: 14px;
+            margin-left: 10px;
+        }
+
+        .footer {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="nav-item">新品推荐</div>
+            <div class="nav-item">在线购买产品</div>
+            <img class="nav-item" src="images/germany.jpg" alt="">
+            <div class="nav-item">企业礼包</div>
+            <div class="nav-item">品牌介绍</div>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="welcome-content">
+            <div class="welcome-content-left">
+                <img class="welcome-content-left-img" src="images/welcome-left.jpg" alt="">
+                <img class="play" src="images/play.jpg" alt="">
+            </div>
+            <div class="welcome-content-right">
+                <h2>Welcome to Lamy</h2>
+                <br>
+                <br>
+                <p>德国书写工具品牌LAMY始创人C•Josef Lamy于1930年在海德
+                    堡创立了欧瑟斯墨水笔制造厂.1952年,崭露头角的LAMY 流线
+                    型墨水笔，震撼问世, 彰显公司的创新敏锐触觉。1966年终于打
+                </p>
+                <br> <br>
+                <p>
+                    造出令人耳目一新的现代经典之作-LAMY 2000系列。产品撮合
+                    了聚碳酸酯与不锈钢材质，绝妙的配搭，使之从芸芸众生的书写
+                    工具中脱颖而出，时至今日，依然在市场具有影响力。 </p>
+            </div>
+        </div>
+    </div>
+    <div class="lamy-product">
+        <h2 class="lamy-product-title">LAMY各系列</h2>
+        <div class="lamy-product-content">
+            <div class="lamy-product-content-item">
+                <div class="lamy-product-content-item-title">【恒星系列 墨水笔 】</div>
+                <p class="lamy-product-content-item-text">
+                    LAMY 恒星系列延续了 LAMY
+                    <br>
+                    的时尚造型，打造出锦上添花的极致品质
+                    <br>
+                    。此系列全部均由氧化
+                    <br>
+                    独特的凹陷式笔握以及弹性铜线笔夹
+                    <br>
+
+                    富的颜色让 LAMY 恒星系列突破了传统
+                    <br>
+                    散发着无限的青春魅力。
+                </p>
+            </div>
+            <div class="lamy-product-content-item">
+                <div class="lamy-product-content-item-title">【狩猎系列限量色墨水笔 】</div>
+                <p class="lamy-product-content-item-text">
+                    色彩丰富，颜色亮丽，不仅是可以作为书
+                    <br>
+                    写工具，同样是很好的装饰品
+                    <br>
+                    宽大的笔夹设计，可随时夹在包带、牛仔裤、
+                    <br>
+                    T恤袖口上,让您感受创意方便的携带方式
+                    <br>
+                    笔身通体材质采用车用强力ABS材料
+                </p>
+            </div>
+            <div class="lamy-product-content-item">
+                <div class="lamy-product-content-item-title">【喜悦系列美术笔 】</div>
+                <p class="lamy-product-content-item-text">
+                    用以绘图、写艺术字、艺术签名
+                    <br>
+                    扁平状的笔尖设计，适合书写艺术字
+                    <br>
+                    立体感极佳.1、1.5、1.9三种笔尖可供选择
+                    <br>
+                    ，可书写粗细不等的立体字，让您随时
+                    <br>
+                    感受变化的乐趣复古的笔杆设计
+                    <br>
+                    经典又与众不同，显示出独特的欣赏品味
+                </p>
+            </div>
+        </div>
+        <div class="lamy-product-btn">
+            了解详情
+            <img class="lamy-product-btn-arrow" src="images/arrow.jpg" alt="">
+        </div>
+    </div>
+    <div class="product-imgBox">
+        <img class="product-img" src="images/product-img.jpg" alt="">
+    </div>
+    <div class="saying">
+        <div class="saying-content">
+            <img class="saying-content-img" src="images/saying-img.jpg" alt="">
+            <p class="saying-content-text">
+                使用令人难以置信的生产技术和坚持极高水平的精准要求，仅使用一种
+                <br>
+                材质，也足以成就出这款永恒的设计。产品本身是体现不同加工程序和
+                <br>
+                制造工艺。手工打磨的亚光拉丝表面充分体现了品牌对细节的注重。
+            </p>
+            <div class="tab">
+                <div class="tab-item active"></div>
+                <div class="tab-item"></div>
+                <div class="tab-item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="our-product">
+        <div class="our-product-content">
+            <img class="our-product-headerImg" src="images/our-productheaderimg.jpg" alt="">
+            <div class="our-product-content">
+                <img class="our-product-content-img" src="images/our-product-content.jpg" alt="">
+            </div>
+            <div class="our-product-content-btn">
+                戳我速购
+                <img class="our-product-content-btn-arrow" src="images/arrow.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="copywriting">
+        <img class="copywriting-img" src="images/copywriting.jpg" alt="">
+    </div>
+    <div class="copywriting-btn">
+        新品推荐
+        <img class="copywriting-btn-arrow" src="images/arrow.jpg" alt="">
+    </div>
+    <div class="footer">
+        <img class="footer-img" src="images/footer.jpg" alt="">
+    </div>
+</body>
+
+</html>
