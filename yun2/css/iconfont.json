@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1447736",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "3879804",
+      "name": "20 龙猫-01",
+      "font_class": "longmao-",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "5203322",
+      "name": "圆圈",
+      "font_class": "yuanquan",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "15803433",
+      "name": "PITAO-犬",
+      "font_class": "PITAO-quan",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "16061517",
+      "name": "PITAO-豹猫",
+      "font_class": "PITAO-baomao",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "16061524",
+      "name": "PITAO-黑猫",
+      "font_class": "PITAO-heimao",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    }
+  ]
+}
