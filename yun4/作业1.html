@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="string">请输入一个字符串：</label><br>
+    <input type="text" id="string"><br>
+    <label for="string2">请输入一个子串：</label><br>
+    <input type="text" id="string2">
+    <button onclick="cishu()">提交</button><br>
+    子串出现的次数为：<div id="con"></div><br>
+</body>
+<script>
+    function cishu() {
+        let index = 0;
+        let count = 0;
+        let string = document.getElementById("string").value;
+        let string2 = document.getElementById("string2").value;
+        while ((index = string.indexOf(string2, index)) !== -1) {
+            count++;
+            index = index + string2.length;
+        }
+        document.getElementById("con").textContent = count;
+    }
+</script>
+
+
+
+
+
+</html>
