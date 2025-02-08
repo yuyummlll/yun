@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        margin-top: 20px;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+    <!--获取当前时间-->
+    <div>
+        <p>当前时间：<span id="timeValue"></span></p>
+    </div>
+    <form id="message">
+        <label for="user">账号：</label>
+        <input type="text" id="user" required><br>
+        <label for="password">密码：</label>
+        <input type="text" id="password" required><br>
+    </form>
+    <button id="zhuce">注册</button>
+    <button id="getUser">获取用户列表</button>
+    <ul id="userList"></ul>
+    <script>
+        window.onload = function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://43.143.169.168:9090/time/now');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    document.getElementById('timeValue').innerText = response.data;
+                    console.log('获取当前时间响应:', response);
+                } else {
+                    console.error('获取当前时间失败，状态码:', xhr.status);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('获取当前时间发生错误');
+            };
+            xhr.send();
+        };
+
+        document.getElementById('message').addEventListener('click', event => {
+            event.preventDefault();
+            const user = document.getElementById('user').value;
+            const password = document.getElementById('password').value;
+            axios({
+                    method: 'post',
+                    url: 'http://43.143.169.168:9090/user/register',
+                    data: {
+                        user,
+                        password
+                    }
+                })
+                .then(response => {
+                    console.log('注册用户响应', response);
+                })
+                .catch(error => {
+                    console.error('注册用户失败', error);
+                })
+        });
+        document.getElementById('getUser').addEventListener('click', event2 => {
+            axios({
+                    method: 'get',
+                    url: 'http://43.143.169.168:9090/user/all',
+                })
+                .then(response => {
+                    const userListElement = document.getElementById('userList');
+                    userListElement.innerHTML = response.data.data
+                        .map(user => `<li>${user}</li>`)
+                        .join('');
+                    console.log('用户列表响应:', response.data);
+                })
+
+                .catch(error => {
+                    console.error('获取用户列表失败', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
