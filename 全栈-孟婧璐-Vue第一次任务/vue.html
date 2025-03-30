@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="vue.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="promptword" @keyup.enter="addword" placeholder="请输入单词">
+        <p><strong style="font-size:35px;">你要输入的单词是：{{ promptword }}</strong></p>
+        <button style="margin-right:10px;" @click="addword">添加</button>
+        <button @click="delword">删除</button>
+        <p v-if="warninglist" class="warning" style="font-size:24px;">别加辣！单词数量太多了</p>
+        <p :class="{warning:warninglist}" style="font-size:24px;">单词列表:</p>
+
+
+        <ul :class="{warning:warninglist}">
+            <li v-for="(word,index) in items" :key="index">{{word}}</li>
+        </ul>
+
+
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    promptword: '',
+                    items: []
+                }; 
+            },
+            methods: {
+                addword() {
+                    this.items.push(this.promptword)
+                    this.promptword = ""
+                },
+                delword() {
+                    this.items.pop()
+                }
+            },
+            computed: {
+                warninglist() {
+                    return this.items.length > 5;
+                }
+            }
+
+        });
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
